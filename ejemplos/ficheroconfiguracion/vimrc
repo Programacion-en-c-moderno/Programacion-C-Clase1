@@ -1,0 +1,51 @@
+set nocompatible
+filetype on
+filetype plugin on
+filetype plugin indent on
+
+set smartindent
+set ruler
+set showcmd
+set number
+set cursorline
+set cursorcolumn
+set smartcase
+set incsearch
+set hlsearch
+set gfn=Monaco
+
+syntax on
+
+colorscheme default
+set bg=light
+
+set textwidth=80
+set colorcolumn=80
+set t_Co=256
+
+"encoding
+set encoding=utf-8
+set laststatus=2
+
+"White spaces"
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
+
+"Keys"
+nmap <F2> :NERDTree<CR>
+nmap <F3> :TagbarToggle<CR>
+nmap <F4> :e %:p:s,.hpp$,.X123X,:s,.cpp$,.hpp,:s,.X123X$,.cpp,<CR>
+nmap <F7> :Dox<CR>
+
+"minibufexpl"
+"let g:miniBufExplMapWindowNavVim = 1
+let g:miniBufExplMapWindowNavArrows = 1
+let g:miniBufExplMapCTabSwitchBufs = 1
+let g:miniBufExplModSelTarget = 1
+
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/

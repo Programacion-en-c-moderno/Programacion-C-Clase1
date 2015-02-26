@@ -1,0 +1,9 @@
+[user]
+	email = CORREO
+	name = NOMBRE_DESARROLLADOR
+[sendemail]
+	smtpencryption = tls
+	smtpserver = smtp.gmail.com
+	smtpuser = CORREO
+	smtppass = PASSWORD
+	smtpserverport = 587
